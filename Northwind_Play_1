@@ -1,0 +1,64 @@
+use Northwind;
+go
+
+
+insert into Categories(CategoryName, Description)
+values ('Fresh fruits', 'Fresh fruits and Vegetables')
+select * from Categories
+
+
+insert into Region(RegionID, RegionDescription)
+values('5','Midwest')
+select * from Region
+
+
+update Employees
+set title = 'Sales Specialist'
+where title = 'Sales Representative'
+go
+select * from Employees
+
+
+update Region
+set RegionDescription ='Southeast'
+where RegionDescription ='Midwest'
+go
+select * from Region
+
+select * from OrderDetails where orderID ='11071'
+go
+delete from OrderDetails where orderID ='11071'
+go
+select * from OrderDetails where orderID ='11071'
+go
+
+
+select * from Orders where orderID ='11071'
+delete from Orders where orderID ='11071'
+go
+select * from Orders where orderID ='11071'
+
+
+select * from Employees
+update Employees
+set Salary = Salary*1.05
+where upper(lastname) = 'Peacock' and upper (firstname) = 'Margaret';
+go
+select * from Employees where LastName = 'Peacock'
+
+select * from Suppliers;
+insert into Suppliers(CompanyName,ContactName,ContactTitle,Address,City,Region,PostalCode,Country,Phone)
+values('Acme Enterprises','Wylie Coyote','Executive Manager','123 Main Street','Las Vegas','NV','89108','USA','(702) 555-9876')
+go
+select * from Suppliers;
+
+
+select * from products
+update Products
+set UnitsInStock = UnitsInStock-40
+where upper(ProductID) = '40';
+select * from products
+
+delete from Region where RegionID ='5'
+select * from Region
+
