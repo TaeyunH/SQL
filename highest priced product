@@ -1,0 +1,11 @@
+For each of the requests below Create a query against the TSQL Database:
+1.	Find the highest priced product. 
+a.	Provide Name and Price.
+
+
+SELECT TOP 1 
+p.ProductName, o.UnitPrice
+FROM Sales.OrderDetails o
+INNER JOIN Production.Products p
+ON o.ProductID = p.ProductID
+ORDER BY o.UnitPrice DESC;
