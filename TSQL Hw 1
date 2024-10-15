@@ -6,6 +6,7 @@ CustomerID, CustomerName, Total Sales
 Submit query or queries and screen-shot of the table in SSMS.
 
 
+/*
 CREATE TABLE TSQL.SalesReport (
     OrderID INT NOT NULL,
     ProductID INT NOT NULL,
@@ -15,4 +16,17 @@ CREATE TABLE TSQL.SalesReport (
     PRIMARY KEY (OrderID, ProductID)
 );
 
+
+INSERT INTO TSQL.SalesReport (OrderID, ProductID, UnitPrice, Quantity, Discount)
+SELECT OrderID, ProductID, UnitPrice, Quantity, Discount
+FROM Sales.OrderDetails;
+
+*/
+
+SELECT TOP 20 o.OrderID, p.CustomerID, q.ContactName, 
+       Round((o.UnitPrice * o.Quantity) * (1 - ISNULL(o.Discount, 0)),2) AS TotalOrderAmount
+FROM TSQL.SalesReport o
+JOIN Sales.Orders p ON o.OrderID = p.OrderID
+JOIN Sales.Customers q ON p.CustomerID = q.CustomerID
+order by TotalOrderAmount DESC;
 
