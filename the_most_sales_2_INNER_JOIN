@@ -1,0 +1,10 @@
+2.	Find the Customer Name with the most sales (UnitPrice * Quantity)
+a.	Provide Name and Amount Paid
+
+SELECT TOP 1 
+p.ContactName AS Name, 
+(o.UnitPrice * o.Quantity) * (1 - o.Discount) AS Sales
+FROM Sales.Customers p
+INNER JOIN Sales.Orders q ON q.CustomerID = p.CustomerID
+INNER JOIN Sales.OrderDetails o ON o.OrderID = q.OrderID
+ORDER BY Sales DESC;
