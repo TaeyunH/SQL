@@ -1,0 +1,18 @@
+Create a Table in the TSQL DB
+Named “SalesReport”
+Populate the Table with the Top 20 largest total orders by total order sales
+Include the following columns:
+CustomerID, CustomerName, Total Sales
+Submit query or queries and screen-shot of the table in SSMS.
+
+
+CREATE TABLE TSQL.SalesReport (
+    OrderID INT NOT NULL,
+    ProductID INT NOT NULL,
+    UnitPrice DECIMAL(10, 2) NOT NULL,
+    Quantity INT NOT NULL,
+    Discount FLOAT DEFAULT 0,
+    PRIMARY KEY (OrderID, ProductID)
+);
+
+
