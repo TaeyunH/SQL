@@ -1,0 +1,9 @@
+4.	Update Unit prices for all products below 20.00
+a.	 Submit a list of products
+b.	Increase unit prices for all products below 20.00 and increase by 40%	
+c.	Submit a list of products
+
+
+SELECT ProductName, CAST(ROUND((UnitPrice * 1.4), 2) AS DECIMAL(10,2)) AS UnitPrice
+FROM Production.Products
+WHERE UnitPrice < 20;
