@@ -1,0 +1,7 @@
+a.	Provide Customer Name and Total number of orders 
+
+SELECT p.ContactName AS Customer_Name, p.CustomerID, COUNT(orderID) AS count
+FROM Sales.Customers p
+INNER JOIN Sales.Orders q ON q.CustomerID = p.CustomerID
+GROUP BY p.CustomerID, p.ContactName
+ORDER BY count DESC;
