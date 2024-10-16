@@ -1,0 +1,14 @@
+5.	Add new product Tricycle include ([ProductName],[SupplierID],[CategoryID],[QuantityPerUnit],[UnitPrice],[UnitsInStock],[UnitsOnOrder],[ReorderLevel],[Discontinued]), 
+a.	Then create a query for the new product. (Set the values for the fields)
+b.	Provide ProductName and UnitPrice.
+
+
+/*
+INSERT INTO Production.Products
+    ([ProductName], [SupplierID], [CategoryID], [QuantityPerUnit], [UnitPrice], [UnitsInStock], [UnitsOnOrder], [ReorderLevel], [Discontinued])
+VALUES
+    ('Tricycle', 2, 3, 1, 200, 50, 10, 5, 0);
+*/
+SELECT ProductName, UnitPrice
+FROM Production.Products
+WHERE ProductName = 'Tricycle';
